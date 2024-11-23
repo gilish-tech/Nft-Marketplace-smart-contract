@@ -1,66 +1,74 @@
-## Foundry
+# Gilish Market Smart Contract
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+```
+  ____ _ _ _     _     _               __  __             _            
+ / ___(_) | |_  (_)___| |_ _ __ ___   |  \/  | __ _ _ __ (_)_ __   __ _ 
+| |  _| | | __| | / __| __| '__/ _ \  | |\/| |/ _` | '_ \| | '_ \ / _` |
+| |_| | | | |_  | \__ \ |_| | | (_) | | |  | | (_| | | | | | | | | (_| |
+ \____|_|_|\__| |_|___/\__|_|  \___/  |_|  |_|\__,_|_| |_|_|_| |_|\__, |
+                                                                  |___/ 
+```
 
-Foundry consists of:
+## Overview
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+The **Gilish Market Smart Contract** is the backbone of the blockchain functionality for the Gilish Market platform. It is written in **Solidity** and deployed on the **Sepolia Testnet**, enabling decentralized and secure interactions for users.
 
-## Documentation
+The smart contract provides the following functionalities:
 
-https://book.getfoundry.sh/
+- **NFT Minting and Metadata Management:** Users can mint NFTs with metadata stored off-chain.
+- **Marketplace Operations:** Facilitates listing, buying, and selling of NFTs.
+- **Ownership Verification and Access Control:** Ensures secure and transparent transactions.
 
-## Usage
+---
 
-### Build
+## How to Use
 
+### Build the Project
+To build the smart contract, use the following command:
 ```shell
 $ forge build
 ```
 
-### Test
-
+### Run Tests
+To test the smart contract functionalities, run:
 ```shell
 $ forge test
 ```
 
-### Format
-
+### Deploy the Smart Contract
+You can deploy the contract using:
 ```shell
-$ forge fmt
+$ forge install
+$ forge compile
+```
+then use the following command to deploy directly:
+```shell
+$ make deploy
+   or
+$ forge script script/GilishMarketPlace.s.sol
 ```
 
-### Gas Snapshots
+---
 
-```shell
-$ forge snapshot
-```
+## Project Coverage
 
-### Anvil
+Below is the project coverage screenshot:
+![Gilish Market](./screenshots/project-coverage.PNG)
 
-```shell
-$ anvil
-```
+---
 
-### Deploy
+## About Gilish Market
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+The **Gilish Market Smart Contract** is designed to offer a seamless blockchain marketplace where users can:
 
-### Cast
+- **Mint NFTs**: Users can mint their own NFTs with associated metadata.
+- **Buy NFTs**: Purchase NFTs securely and directly from the marketplace.
+- **Sell NFTs**: List NFTs for sale with full control over pricing.
 
-```shell
-$ cast <subcommand>
-```
+Built with security, transparency, and efficiency in mind, the **Gilish Market** is perfect for both technical and non-technical users looking to engage in blockchain commerce.
 
-### Help
+---
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+## License
+
+This project is licensed under the [MIT License](LICENSE).
